@@ -53,7 +53,7 @@ set_target_properties("${CMAKE_PROJECT_NAME}" PROPERTIES
 target_compile_definitions(
 	${CMAKE_PROJECT_NAME}
 	PUBLIC
-	RESOURCES_PATH=$<IF:$<CONFIG:Release>,"./Resources/","${CMAKE_CURRENT_SOURCE_DIR}/Resources/"
+	RESOURCES_PATH=$<IF:$<CONFIG:Release>,"./Resources/","${CMAKE_CURRENT_SOURCE_DIR}/Resources/">
 )
 
 target_compile_features("${CMAKE_PROJECT_NAME}" PRIVATE cxx_std_20)
