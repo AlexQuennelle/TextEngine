@@ -12,7 +12,7 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:-O3;-ffast-math>")
 
 # Change this to match the name of the current folder
-project(RaylibKickstart LANGUAGES CXX C VERSION 0.0)
+project(TextEngine LANGUAGES CXX C VERSION 0.0)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
 message("Build type: ${CMAKE_BUILD_TYPE}")

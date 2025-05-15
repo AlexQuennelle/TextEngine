@@ -2,7 +2,7 @@
 
 int main()
 {
-	InitWindow(800, 800, "test");
+	InitWindow(800, 800, "Text Adventure Engine");
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
