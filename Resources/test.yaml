@@ -1,0 +1,13 @@
+scenes:
+  - text: |
+      This is the first scene.
+    options:
+      - text: |
+          This is the first option.
+        sceneID: 1
+  - text: |
+      this is the second scene
+    options:
+      - text: |
+          this is the first option
+        sceneID: 0

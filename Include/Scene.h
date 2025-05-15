@@ -1,24 +1,22 @@
 #pragma once
 
-#include <iostream>
-#include <ostream>
 #include <string>
 #include <vector>
+#include <yaml-cpp/node/node.h>
 
 namespace tae
 {
 
 using std::vector;
-using std::string;
 
 class Scene
 {
 	public:
+	Scene(YAML::Node node);
+
+	std::string text;
+
 	private:
 };
-
-vector<Scene>* ParseFile(const string& filePath);
-
-std::ostream& operator<<(std::ostream& os, const std::vector<char>& data);
 
 } //namespace tae

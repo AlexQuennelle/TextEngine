@@ -1,11 +1,21 @@
 #include "Scene.h"
-#include "raylib.h"
+
+#include <iostream>
+#include <raylib.h>
+#include <yaml-cpp/node/parse.h>
+#include <yaml-cpp/yaml.h>
 
 int main()
 {
 	InitWindow(800, 800, "Text Adventure Engine");
 
-	tae::ParseFile(RESOURCES_PATH "test.json");
+	YAML::Node rootNode = YAML::LoadFile(RESOURCES_PATH "test.yaml")["scenes"];
+	std::vector<tae::Scene> scenes;
+	scenes.reserve(rootNode.size());
+	for (auto scene : rootNode)
+	{
+		scenes.emplace_back(scene);
+	}
 
 	while (!WindowShouldClose())
 	{
