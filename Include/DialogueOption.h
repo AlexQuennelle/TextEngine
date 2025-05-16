@@ -1,23 +1,19 @@
 #pragma once
 
-#include "DialogueOption.h"
-
+#include <cstdint>
 #include <string>
-#include <vector>
 #include <yaml-cpp/node/node.h>
 
 namespace tae
 {
 
-using std::vector;
-
-class Scene
+class DialogueOption
 {
 	public:
-	Scene(YAML::Node node);
+	DialogueOption(YAML::Node node);
 
+	int32_t sceneID;
 	std::string text;
-	std::vector<DialogueOption> options;
 
 	private:
 };

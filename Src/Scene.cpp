@@ -14,6 +14,12 @@ Scene::Scene(YAML::Node node)
 	if (node.IsMap())
 	{
 		this->text = node["text"].as<std::string>();
+		this->options.reserve(node["options"].size());
+		for (auto optionData : node["options"])
+		{
+			auto* option = new DialogueOption(optionData);
+			this->options.push_back(*option);
+		}
 	}
 	else
 	{

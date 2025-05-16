@@ -1,13 +1,27 @@
 scenes:
   - text: |
       This is the first scene.
+      A scene consists of text with a set of dialogue options to choose from.
+
+      The text can contain newlines and whitespace as long as a vertical bar is placed before the text starts and the text itself is indented by 2 spaces.
+      "what about quotation marks" you ask?
+      Not a problem!
     options:
-      - text: |
-          This is the first option.
+      # dialogue options consist of text and the ID of the scene it takes you to
+      # the text follows all the same rules as the scene text
+      # both of these follow general YAML rules
+      # yaml.org/spec/1.2.2/ has more detailed info
+      # the scene ID specifies the scene an option takes you to
+      # the first scene in this file is scene 0
+      # all subsequent scenes count up from there
+      # a scene ID of -1 ends the game and takes you back to the start menu
+      - text: This is the first option.
         sceneID: 1
-  - text: |
-      this is the second scene
+      - text: This is the second option. It ends the game.
+        sceneID: -1
+      - text: This is the third option and it replays this scene.
+        sceneID: 0
+  - text: this is the second scene
     options:
-      - text: |
-          this is the first option
+      - text: this is the first option
         sceneID: 0
