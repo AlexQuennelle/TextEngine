@@ -27,4 +27,9 @@ Scene::Scene(YAML::Node node)
 	}
 }
 
+std::string Scene::GetText()
+{
+	return this->text;
+}
+
 } //namespace tae

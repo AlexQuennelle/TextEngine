@@ -15,11 +15,11 @@ class Scene
 {
 	public:
 	Scene(YAML::Node node);
-
-	std::string text;
-	std::vector<DialogueOption> options;
+	std::string GetText();
 
 	private:
+	std::string text;
+	std::vector<DialogueOption> options;
 };
 
 } //namespace tae
