@@ -8,7 +8,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+if("${CMAKE_GENERATOR}" STREQUAL "Visual Studio 17 2022")
+  message("Visual Studio Generator")
+else()
+  set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+endif()
 add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:-O3;-ffast-math>")
 
 # Change this to match the name of the current folder

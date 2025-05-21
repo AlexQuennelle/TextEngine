@@ -6,14 +6,6 @@
 #include <yaml-cpp/node/parse.h>
 #include <yaml-cpp/yaml.h>
 
-struct FontData
-{
-	uint32_t vChars;
-	uint32_t hChars;
-};
-
-FontData FONTDATA{30, 87};
-
 int main()
 {
 	InitWindow(1200, 900, "Text Adventure Engine");
@@ -24,15 +16,10 @@ int main()
 
 	Font font =
 		LoadFontEx(RESOURCES_PATH "/Fonts/JetBrainsMonoNerdFont-Bold.ttf",
-				   GetScreenHeight() / FONTDATA.vChars, 0, 250);
+				   GetScreenHeight() / 30, nullptr, 250);
 
-	std::cout << "font padding: "
-			  << MeasureTextEx(font,
-							   "The text can contain newlines and whitespace "
-							   "as long as a vertical bar is placed before ",
-							   static_cast<float>(font.baseSize), 0.6f)
-					 .x
-			  << '\n';
+	float textWidth =
+		MeasureTextEx(font, " ", static_cast<float>(font.baseSize / 2), 0.0f).x;
 
 	for (auto scene : rootNode)
 	{
@@ -44,7 +31,9 @@ int main()
 		BeginDrawing();
 		ClearBackground({0, 0, 0, 255});
 		DrawTextEx(font, scenes[0].GetText().c_str(), {0.0f, 0.0f},
-				   static_cast<float>(font.baseSize), 0.6f, WHITE);
+				   static_cast<float>(font.baseSize / 2), 0.0f, WHITE);
+
+		DrawRectangle(0, 30, static_cast<int>(textWidth), 5, RED);
 		EndDrawing();
 	}
 
