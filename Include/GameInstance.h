@@ -4,6 +4,7 @@
 
 #include <cstdint>
 #include <raylib.h>
+#include <string>
 #include <vector>
 
 namespace tae
@@ -22,8 +23,11 @@ class GameInstance
 {
 	public:
 	GameInstance();
+	void Update();
 
 	private:
+	void Draw();
+	void LoadAdventure(const std::string& filePath);
 	/**
 	 * Loads a font and sets some related variables
 	 * @param lineCount Number of characters that fit on the screen vertically.
