@@ -16,7 +16,7 @@ GameInstance::GameInstance()
 	std::string fontPath =
 		RESOURCES_PATH "/Fonts/JetBrainsMonoNerdFont-Bold.ttf";
 	this->LoadFont(fontPath, this->vChars);
-	this->LoadAdventure(RESOURCES_PATH "test.yaml");
+	this->LoadAdventure(RESOURCES_PATH "example.yaml");
 	this->state = GameState::Adventure;
 }
 void GameInstance::Update()
