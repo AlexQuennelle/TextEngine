@@ -39,7 +39,7 @@ void GameInstance::Draw()
 	case GameState::MainMenu:
 		break;
 	case GameState::Adventure:
-		DrawTextEx(this->font, this->scenes[0].GetText().c_str(), {0.0f, 0.0f},
+		DrawTextEx(this->font, this->scenes[0].GetText(92).c_str(), {0.0f, 0.0f},
 				   static_cast<float>(this->font.baseSize), 0.0f, WHITE);
 		break;
 	default:

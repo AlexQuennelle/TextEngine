@@ -2,6 +2,7 @@
 
 #include "DialogueOption.h"
 
+#include <cstdint>
 #include <string>
 #include <vector>
 #include <yaml-cpp/node/node.h>
@@ -15,7 +16,7 @@ class Scene
 {
 	public:
 	Scene(YAML::Node node);
-	std::string GetText();
+	std::string GetText(uint16_t hChars);
 
 	private:
 	std::string text;
