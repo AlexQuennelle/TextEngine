@@ -18,9 +18,10 @@ class Scene
 	Scene(YAML::Node node);
 	std::string GetText(uint16_t hChars);
 
+	std::vector<DialogueOption> options;
+
 	private:
 	std::string text;
-	std::vector<DialogueOption> options;
 };
 
 } //namespace tae

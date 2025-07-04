@@ -27,6 +27,7 @@ class GameInstance
 
 	private:
 	void Draw();
+	void DrawGameplay();
 	void LoadAdventure(const std::string& filePath);
 	/**
 	 * Loads a font and sets some related variables
@@ -36,6 +37,8 @@ class GameInstance
 
 	uint16_t hChars;
 	uint8_t vChars{30};
+	uint32_t sceneIndex{0};
+	Vector2 fontSize;
 	GameState state{GameState::MainMenu};
 	Font font;
 	std::vector<tae::Scene> scenes;

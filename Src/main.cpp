@@ -9,8 +9,11 @@
 
 int main()
 {
+	SetConfigFlags(FLAG_WINDOW_TRANSPARENT | FLAG_WINDOW_UNDECORATED);
 	InitWindow(1200, 900, "Text Adventure Engine");
+	SetWindowOpacity(100.0f);
 	auto* game = new tae::GameInstance();
+
 
 	while (!WindowShouldClose())
 	{
