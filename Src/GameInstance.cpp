@@ -3,7 +3,6 @@
 #include <cmath>
 #include <cstdint>
 #include <iostream>
-#include <ranges>
 #include <raylib.h>
 #include <string>
 #include <vector>
@@ -32,12 +31,24 @@ GameInstance::GameInstance()
 }
 void GameInstance::Update()
 {
+	uint16_t key = GetKeyPressed() - 49;
 	switch (this->state)
 	{
+	case GameState::MainMenu:
+		break;
+	case GameState::Adventure:
+		if (key < 9 && key < scenes[sceneIndex].options.size())
+		{
+			sceneIndex = scenes[sceneIndex].options[key].sceneID;
+		}
+		if (sceneIndex == -1)
+		{
+			state = GameState::MainMenu;
+		}
+		break;
 	default:
 		break;
 	}
-	// TODO: Update loop
 	this->Draw();
 }
 

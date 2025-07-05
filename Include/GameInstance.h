@@ -37,7 +37,7 @@ class GameInstance
 
 	uint16_t hChars;
 	uint8_t vChars{30};
-	uint32_t sceneIndex{0};
+	int32_t sceneIndex{0};
 	Vector2 fontSize;
 	GameState state{GameState::MainMenu};
 	Font font;

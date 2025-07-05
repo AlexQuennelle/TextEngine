@@ -21,7 +21,7 @@ scenes:
         sceneID: -1
       - text: This is the third option and it replays this scene.
         sceneID: 0
-  - text: this is the second scene
+  - text: This is the second scene.
     options:
-      - text: this is the first option
+      - text: this is the first option.
         sceneID: 0
