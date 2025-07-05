@@ -31,15 +31,19 @@ GameInstance::GameInstance()
 }
 void GameInstance::Update()
 {
-	uint16_t key = GetKeyPressed() - 49;
+	uint16_t key = GetKeyPressed();
 	switch (this->state)
 	{
 	case GameState::MainMenu:
+		// TODO: List all yaml files in resources directory
+		// Also display any image that shares a name with the yaml file
+		// Use arrow keys for navigation.
 		break;
 	case GameState::Adventure:
-		if (key < 9 && key < scenes[sceneIndex].options.size())
+		// Subtract 49 from key to rebase the values such that the 1 key is 0
+		if (key - 49 < 9 && key - 49 < scenes[sceneIndex].options.size())
 		{
-			sceneIndex = scenes[sceneIndex].options[key].sceneID;
+			sceneIndex = scenes[sceneIndex].options[key - 49].sceneID;
 		}
 		if (sceneIndex == -1)
 		{

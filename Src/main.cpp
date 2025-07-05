@@ -6,8 +6,8 @@
 
 int main()
 {
-	SetConfigFlags(FLAG_WINDOW_TRANSPARENT | FLAG_WINDOW_UNDECORATED);
-	InitWindow(1200, 900, "Text Adventure Engine");
+	SetConfigFlags(FLAG_WINDOW_TRANSPARENT);
+	InitWindow(1000, 1200, "Text Adventure Engine");
 	SetTargetFPS(60);
 	auto* game = new tae::GameInstance();
 

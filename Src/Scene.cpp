@@ -1,6 +1,5 @@
 #include "Scene.h"
 
-#include <algorithm>
 #include <cassert>
 #include <cstdint>
 #include <iostream>
