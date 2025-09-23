@@ -1,6 +1,17 @@
-read -p "Build type: " buildType
+if [[ "$1" ]]; then
+	buildType="$1"
+else
+	read -p "Build type: " buildType
+fi
 mkdir -p bin
-if [[ "${buildType^}" != "Debug" && "${buildType^} != Release" ]]; then
+if [[ "${buildType^}" = "Web" ]]; then
+	mkdir -p build.web
+	cd build.web
+	emcmake.py cmake -DCMAKE_BUILD_TYPE=Release -DPLATFORM=Web ..
+	emmake.py make
+	cd ..
+	exit
+elif [ "${buildType^}" != "Debug" ] && [ "${buildType^}" != "Release" ]; then
 	buildType="Debug"
 fi
 mkdir -p build
@@ -10,6 +21,7 @@ make
 cd ..
 if [[ "${buildType^}" = "Debug" ]]; then
 	cd bin
-	wezterm start --cwd . --class floating ./$(basename $(dirname $PWD))
+	wezterm start --cwd . --always-new-process --class floating gdb -ex run ./$(basename $(dirname $PWD))
+	# wezterm start --cwd . --always-new-process --class floating ./$(basename $(dirname $PWD))
 fi
 exit
