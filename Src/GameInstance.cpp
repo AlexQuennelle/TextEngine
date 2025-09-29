@@ -23,6 +23,8 @@ GameInstance::GameInstance()
 	this->LoadFont(fontPath, this->vChars);
 	this->fontSize = MeasureTextEx(this->font, " ", this->font.baseSize, 0);
 	SetWindowSize(82 * this->fontSize.x, 25 * this->fontSize.y);
+	SetWindowPosition((GetMonitorWidth(0) / 2) - (GetScreenWidth() / 2),
+					  (GetMonitorHeight(0) / 2) - (GetScreenHeight() / 2));
 	this->LoadAdventure(RESOURCES_PATH "example.yaml");
 	this->state = GameState::Adventure;
 	std::cout << "\033[38;2;220;220;0m" << "Font dimensions: ";
