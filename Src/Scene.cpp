@@ -47,7 +47,7 @@ std::string Scene::GetText(uint16_t hChars)
 		else
 		{
 			wrappedString[lastSpace] = '\n';
-			charsOnLine = 0;
+			charsOnLine = i - lastSpace;
 		}
 
 		if (this->text[i] == '\n')
